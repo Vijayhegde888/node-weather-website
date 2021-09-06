@@ -6,7 +6,7 @@ const geocode=require("./utils/geocode.js")
 const forecast=require("./utils/forecast.js");
 const { RSA_NO_PADDING } = require('constants');
 
-
+const port=process.env.PORT || 3000
 //define paths for express config
  const publicDirectoryPath=path.join(__dirname,'../public');
  const viewsPath=path.join(__dirname,'../templates/views');
@@ -104,6 +104,6 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
-console.log('Server is up on 3000');
+app.listen(port,()=>{
+console.log('Server is up on '+ port);
 })
